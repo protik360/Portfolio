@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratik Poudel | Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Pratik<span>360</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Journey</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html" class="back-btn">⇄ The Instructor</a></li>
+        </ul>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1>Pratik<br><span>Poudel</span></h1>
+            <p class="hero-role">BCA Student &nbsp;·&nbsp; Aspiring Software Developer</p>
+            <p class="hero-desc">I build clean, functional web experiences and love solving real-world problems through code. Currently exploring full-stack development and Python.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn primary-btn">View Projects</a>
+                <a href="#contact" class="btn secondary-btn">Get in Touch</a>
+            </div>
+            <div class="socials">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:pratik.paudel360@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <div class="scroll-line"></div>
+            <span>scroll</span>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <span class="section-label">// 01. about</span>
+        <h2 class="section-title">About Me</h2>
+        <div class="about-container">
+            <div class="about-img-wrap">
+                <img src="https://placehold.co/400x400/0d1526/00d4ff?text=PP" alt="Pratik Poudel">
+            </div>
+            <div class="about-text">
+                <h3>Developer by passion,<br>problem-solver by nature</h3>
+                <p>I'm a <strong style="color: var(--primary)">BCA student</strong> with a genuine love for web development and software engineering. I enjoy turning ideas into working products — whether it's a clean frontend or a Python script that saves someone hours of work.</p>
+                <p>When I'm not coding, I moonlight as an IELTS instructor, helping students achieve their study-abroad dreams. I believe that clear communication — in code or in English — is the foundation of everything.</p>
+
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">3+</span>
+                        <span class="stat-label">Projects Built</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">2+</span>
+                        <span class="stat-label">Years Coding</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">2</span>
+                        <span class="stat-label">Certifications</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section bg-alt">
+        <span class="section-label">// 02. skills</span>
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-container">
+
+            <div class="skill-category">
+                <div class="skill-category-icon"><i class="fas fa-code"></i></div>
+                <h3>Programming</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">C / C++</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-category-icon"><i class="fas fa-globe"></i></div>
+                <h3>Web Tech</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React (Basic)</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-category-icon"><i class="fas fa-database"></i></div>
+                <h3>Tools & DB</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Linux (Basic)</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-category-icon"><i class="fas fa-layer-group"></i></div>
+                <h3>Currently Learning</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">REST APIs</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <span class="section-label">// 03. projects</span>
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="project-number">01</div>
+                <h3>Student Management System</h3>
+                <p>A web-based system to manage student records, track attendance, and display grades. Includes a clean dashboard interface with local storage persistence.</p>
+                <div class="tech-stack">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">02</div>
+                <h3>Personal Portfolio</h3>
+                <p>A fully responsive personal portfolio website featuring a split-screen landing, tech portfolio, and IELTS instructor page — all with a cohesive design system.</p>
+                <div class="tech-stack">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">03</div>
+                <h3>To-Do List App</h3>
+                <p>A minimal task management app with local storage support, category filtering, and priority tagging. Built to practice DOM manipulation and state management.</p>
+                <div class="tech-stack">
+                    <span>JavaScript</span><span>DOM API</span><span>LocalStorage</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education / Timeline -->
+    <section id="education" class="section bg-alt">
+        <span class="section-label">// 04. journey</span>
+        <h2 class="section-title">My Journey</h2>
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Bachelor of Computer Applications (BCA)</h4>
+                    <span class="date">2024 – Present</span>
+                    <p>XYZ College of Technology</p>
+                    <p>Focusing on Data Structures, Web Development, OOP, and Database Management Systems.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Frontend Development Intern</h4>
+                    <span class="date">Summer 2024</span>
+                    <p>ABC Tech Solutions (Remote)</p>
+                    <p>Assisted in building and styling frontend components using HTML, CSS, and Bootstrap for client projects.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>High School — Science Stream</h4>
+                    <span class="date">2022 – 2024</span>
+                    <p>City Public School</p>
+                    <p>Majored in Physics, Chemistry, and Mathematics. Developed an early interest in programming through self-study.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Resume & Certifications -->
+    <section id="resume" class="section">
+        <span class="section-label">// 05. credentials</span>
+        <h2 class="section-title">Certifications & Resume</h2>
+        <div class="cert-container">
+            <div class="cert-card">
+                <i class="fas fa-award"></i>
+                <h4>Python for Everybody</h4>
+                <p>Coursera — University of Michigan</p>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-award"></i>
+                <h4>Responsive Web Design</h4>
+                <p>freeCodeCamp</p>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-award"></i>
+                <h4>Git & GitHub Essentials</h4>
+                <p>LinkedIn Learning</p>
+            </div>
+        </div>
+        <div class="resume-download">
+            <p>Want to see the full picture? Download my CV below.</p>
+            <a href="resume.pdf" download class="btn primary-btn"><i class="fas fa-download"></i> &nbsp;Download CV</a>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section bg-alt">
+        <span class="section-label">// 06. contact</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's build something<br>together.</h3>
+                <p>I'm open to internship opportunities, freelance projects, or just a friendly conversation about tech. Drop me a message — I reply within 24 hours.</p>
+
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <p>pratik.paudel360@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <p>+977 98XXXXXXXX</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <p>Butwal, Lumbini Province, Nepal</p>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject">
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn primary-btn">Send Message &nbsp;<i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <p>&copy; <span id="year"></span> Pratik Poudel. Designed & Built by me.</p>
+            <div class="socials-footer">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="index.html" title="Back to home"><i class="fas fa-home"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

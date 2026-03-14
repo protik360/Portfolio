@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratik Poudel | IELTS Instructor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #7c3aed;
+            --primary-light: rgba(124,58,237,0.1);
+            --primary-glow: rgba(124,58,237,0.25);
+            --paper: #fdfbf7;
+            --paper-dark: #f4f0e8;
+            --text: #1e2a35;
+            --text-mid: #4a5568;
+            --text-light: #94a3b8;
+            --accent: #d35400;
+            --accent-light: rgba(211,84,0,0.1);
+            --white: #ffffff;
+            --border: rgba(124,58,237,0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--paper);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.8;
+        }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--paper); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 2px; }
+
+        h1, h2, h3, h4 { font-family: 'Lora', serif; }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* ---- Navbar ---- */
+        nav {
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            background: rgba(253,251,247,0.92);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .logo span { color: var(--primary); }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.88rem;
+            color: var(--text-mid);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        .back-btn {
+            background: var(--paper-dark);
+            border: 1px solid var(--border);
+            color: var(--text-mid) !important;
+            padding: 7px 16px;
+            border-radius: 4px;
+            font-size: 0.82rem !important;
+            transition: all 0.2s !important;
+        }
+        .back-btn:hover { border-color: var(--primary) !important; color: var(--primary) !important; }
+
+        .nav-hamburger { display: none; cursor: pointer; font-size: 1.3rem; color: var(--text); }
+
+        /* ---- Hero ---- */
+        .hero {
+            padding: 110px 10% 90px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-texture {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(#d8d2c8 1px, transparent 1px);
+            background-size: 22px 22px;
+            opacity: 0.4;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1100px;
+        }
+
+        .hero-text { }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text);
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .hero-subtitle {
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: var(--text-mid);
+            max-width: 480px;
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+
+        .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+        .btn {
+            padding: 13px 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            border-radius: 4px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #5b21b6;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--primary-glow);
+        }
+
+        .btn-outline {
+            border: 1.5px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        /* Credential card */
+        .hero-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+            transform: rotate(1.5deg);
+            transition: transform 0.3s;
+        }
+        .hero-card:hover { transform: rotate(0deg); }
+
+        .hero-card-title {
+            font-family: 'Lora', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--paper-dark);
+        }
+
+        .cred-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 0.9rem;
+        }
+
+        .cred-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .band-highlight {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-top: 16px;
+        }
+
+        /* ---- Section Base ---- */
+        .section { padding: 80px 10%; }
+        .section-alt { background: var(--paper-dark); }
+
+        .section-label {
+            font-size: 0.72rem;
+            color: var(--accent);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-family: 'Lora', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title::after {
+            content: '§';
+            display: block;
+            font-size: 1.2rem;
+            color: var(--accent);
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+        }
+
+        /* ---- Philosophy ---- */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .philosophy-text p {
+            color: var(--text-mid);
+            margin-bottom: 16px;
+        }
+
+        .philosophy-pillars {
+            margin-top: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .pillar {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 16px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .pillar:hover { border-color: var(--primary); transform: translateX(4px); }
+
+        .pillar-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-light);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .pillar h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+        .pillar p { font-size: 0.85rem; color: var(--text-light); margin: 0; }
+
+        .quote-box {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            padding: 28px;
+            border-radius: 4px;
+        }
+
+        .quote-box blockquote {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .quote-author {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* ---- Modules ---- */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .module-card {
+            background: var(--white);
+            padding: 28px 24px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+        }
+        .module-card:hover::after { transform: scaleX(1); }
+
+        .module-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 18px;
+        }
+
+        .module-card h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .module-card p { font-size: 0.88rem; color: var(--text-mid); }
+
+        /* ---- Results ---- */
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .results-stats {
+            display: flex;
+            gap: 32px;
+        }
+
+        .r-stat { text-align: center; }
+        .r-stat-num {
+            font-family: 'Lora', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+        .r-stat-label { font-size: 0.78rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .story-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 28px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .story-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.07);
+            border-color: var(--primary);
+        }
+
+        .story-quote {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .story-quote::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.2;
+            line-height: 0;
+            vertical-align: -1.2rem;
+            margin-right: 4px;
+        }
+
+        .story-meta { display: flex; justify-content: space-between; align-items: center; }
+
+        .story-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+        .story-dest { font-size: 0.78rem; color: var(--text-light); margin-top: 2px; }
+
+        .band-badge {
+            background: var(--accent);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        /* ---- Pricing ---- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 32px;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.07);
+        }
+
+        .plan-name {
+            font-family: 'Lora', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        .plan-price {
+            font-family: 'Lora', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .plan-duration { font-size: 0.82rem; color: var(--text-light); margin-bottom: 24px; }
+
+        .plan-features { margin-bottom: 28px; }
+
+        .plan-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--text-mid);
+            padding: 6px 0;
+            border-bottom: 1px solid var(--paper-dark);
+        }
+
+        .plan-feature i { color: var(--primary); font-size: 0.75rem; }
+
+        .btn-plan {
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            border: 1.5px solid var(--primary);
+            color: var(--primary);
+            border-radius: 4px;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: block;
+        }
+
+        .btn-plan:hover, .pricing-card.featured .btn-plan {
+            background: var(--primary);
+            color: white;
+        }
+        .pricing-card.featured .btn-plan:hover { background: #5b21b6; }
+
+        /* ---- Contact ---- */
+        .contact-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+        }
+
+        .contact-left h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .contact-left p { color: var(--text-mid); margin-bottom: 32px; }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .contact-detail-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .contact-detail p { font-size: 0.92rem; color: var(--text); }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 13px 16px;
+            margin-bottom: 14px;
+            background: var(--paper);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            transition: border-color 0.2s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 13px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.92rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .contact-form button:hover {
+            background: #5b21b6;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px var(--primary-glow);
+        }
+
+        /* ---- Footer ---- */
+        footer {
+            background: var(--paper-dark);
+            border-top: 1px solid var(--border);
+            padding: 28px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        footer p { font-size: 0.85rem; color: var(--text-light); }
+
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 0.85rem; color: var(--text-light); transition: color 0.2s; }
+        .footer-links a:hover { color: var(--primary); }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; }
+            .hero-card { transform: none; max-width: 400px; }
+            .philosophy-grid { grid-template-columns: 1fr; }
+            .contact-box { grid-template-columns: 1fr; padding: 32px; }
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 60px 6%; }
+            .hero { padding: 80px 6% 60px; }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 65px;
+                left: 0;
+                right: 0;
+                background: rgba(253,251,247,0.98);
+                flex-direction: column;
+                padding: 24px;
+                border-bottom: 1px solid var(--border);
+                gap: 18px;
+            }
+            .nav-links.active { display: flex; }
+            .nav-hamburger { display: block; }
+            .results-header { flex-direction: column; align-items: flex-start; }
+            .results-stats { gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Pratik<span>.Teach</span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="#modules">Modules</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html" class="back-btn">⇄ The Developer</a></li>
+        </ul>
+        <div class="nav-hamburger" id="navHamburger"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-texture"></div>
+        <div class="hero-inner">
+            <div class="hero-text">
+                <div class="hero-tag"><i class="fas fa-graduation-cap"></i> Certified IELTS Instructor</div>
+                <h1>Pratik Poudel</h1>
+                <p class="hero-subtitle">Where language meets logic.</p>
+                <p class="hero-desc">I help ambitious students bridge the gap between their current English level and their study-abroad goals — through structured, personalized, and proven coaching.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Book a Free Demo Class</a>
+                    <a href="#results" class="btn btn-outline">See Student Results</a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <p class="hero-card-title">Credentials & Highlights</p>
+                <div class="cred-item">
+                    <div class="cred-icon"><i class="fas fa-certificate"></i></div>
+                    <span>British Council Certified</span>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-icon"><i class="fas fa-star"></i></div>
+                    <span>IELTS Overall Band 7.0</span>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-icon"><i class="fas fa-users"></i></div>
+                    <span>20+ Students Coached</span>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-icon"><i class="fas fa-clock"></i></div>
+                    <span>2+ Years of Experience</span>
+                </div>
+                <span class="band-highlight">Average student improvement: +1 Band</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Philosophy -->
+    <section id="philosophy" class="section">
+        <span class="section-label">§ 01. teaching approach</span>
+        <h2 class="section-title">Teaching Philosophy</h2>
+        <div class="philosophy-grid">
+            <div class="philosophy-text">
+                <p>My approach to IELTS coaching is built on a single belief: <strong>templates get you 6.0, understanding gets you 7.5+.</strong></p>
+                <p>Every student has a unique set of strengths and gaps. I identify yours in our first session and build a learning path around it — whether you need intensive writing feedback, speaking confidence, or listening strategy.</p>
+
+                <div class="philosophy-pillars">
+                    <div class="pillar">
+                        <div class="pillar-icon"><i class="fas fa-book-open"></i></div>
+                        <div>
+                            <h4>Lexical Resource</h4>
+                            <p>Moving beyond "good" and "bad" to precise, context-appropriate vocabulary.</p>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon"><i class="fas fa-project-diagram"></i></div>
+                        <div>
+                            <h4>Coherence & Cohesion</h4>
+                            <p>Structuring essays and responses that flow logically for the examiner.</p>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon"><i class="fas fa-microphone-alt"></i></div>
+                        <div>
+                            <h4>Natural Pronunciation</h4>
+                            <p>Intonation, stress, and rhythm — not just accent reduction.</p>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon"><i class="fas fa-bullseye"></i></div>
+                        <div>
+                            <h4>Examiner's Perspective</h4>
+                            <p>Teaching you to think like the person marking your paper.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="quote-box">
+                    <blockquote>
+                        "The goal is not to pass the IELTS exam. The goal is to use English so confidently that the IELTS score becomes a natural by-product."
+                    </blockquote>
+                    <span class="quote-author">— Pratik Poudel, on his teaching philosophy</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules -->
+    <section id="modules" class="section section-alt">
+        <span class="section-label">§ 02. expertise</span>
+        <h2 class="section-title">Areas of Expertise</h2>
+        <div class="modules-grid">
+
+            <div class="module-card">
+                <div class="module-icon"><i class="fas fa-pen-fancy"></i></div>
+                <h3>Academic Writing</h3>
+                <p>Mastering Task 1 data interpretation and Task 2 argumentation with high-scoring essay frameworks.</p>
+            </div>
+
+            <div class="module-card">
+                <div class="module-icon"><i class="fas fa-book-reader"></i></div>
+                <h3>Reading Techniques</h3>
+                <p>Skimming, scanning, and identifying True/False/Not Given traps that trip up most students.</p>
+            </div>
+
+            <div class="module-card">
+                <div class="module-icon"><i class="fas fa-comments"></i></div>
+                <h3>Speaking Confidence</h3>
+                <p>Structured mock interviews to build fluency, reduce hesitation, and score on all four criteria.</p>
+            </div>
+
+            <div class="module-card">
+                <div class="module-icon"><i class="fas fa-headphones-alt"></i></div>
+                <h3>Listening Skills</h3>
+                <p>Training your ear for British, Australian, and American accents, rapid speech, and note-taking.</p>
+            </div>
+
+            <div class="module-card">
+                <div class="module-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Score Analysis</h3>
+                <p>Detailed band-score breakdown after every mock test so you know exactly where to improve.</p>
+            </div>
+
+            <div class="module-card">
+                <div class="module-icon"><i class="fas fa-calendar-check"></i></div>
+                <h3>Exam Strategy</h3>
+                <p>Time management, question prioritization, and last-minute prep for test day.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="section">
+        <div class="results-header">
+            <div>
+                <span class="section-label">§ 03. student success</span>
+                <h2 class="section-title">Results That Speak</h2>
+            </div>
+            <div class="results-stats">
+                <div class="r-stat">
+                    <span class="r-stat-num">20+</span>
+                    <span class="r-stat-label">Students</span>
+                </div>
+                <div class="r-stat">
+                    <span class="r-stat-num">+1.2</span>
+                    <span class="r-stat-label">Avg. Band Gain</span>
+                </div>
+                <div class="r-stat">
+                    <span class="r-stat-num">95%</span>
+                    <span class="r-stat-label">Satisfaction</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="stories-grid">
+
+            <div class="story-card">
+                <p class="story-quote">I was stuck at 6.0 in Writing for months. Pratik's feedback on essay structure helped me jump to 7.5 in just 3 weeks. He reviews every paragraph in detail.</p>
+                <div class="story-meta">
+                    <div>
+                        <p class="story-name">Rahul S.</p>
+                        <p class="story-dest">Canada — Engineering MS</p>
+                    </div>
+                    <span class="band-badge">Overall 8.0</span>
+                </div>
+            </div>
+
+            <div class="story-card">
+                <p class="story-quote">The speaking mock tests were exactly like the real exam format. I didn't feel nervous at all on the actual day — I'd already done it 10 times with Pratik.</p>
+                <div class="story-meta">
+                    <div>
+                        <p class="story-name">Priya M.</p>
+                        <p class="story-dest">UK — Medicine</p>
+                    </div>
+                    <span class="band-badge">Overall 7.5</span>
+                </div>
+            </div>
+
+            <div class="story-card">
+                <p class="story-quote">His listening strategy — especially for multiple choice and map labelling — was a game changer. I went from 6.5 to 8.0 in Listening alone.</p>
+                <div class="story-meta">
+                    <div>
+                        <p class="story-name">Ankit R.</p>
+                        <p class="story-dest">Australia — IT</p>
+                    </div>
+                    <span class="band-badge">Overall 7.5</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section section-alt">
+        <span class="section-label">§ 04. coaching plans</span>
+        <h2 class="section-title">Coaching Plans</h2>
+        <div class="pricing-grid">
+
+            <div class="pricing-card">
+                <p class="plan-name">Trial Session</p>
+                <p class="plan-price">Free</p>
+                <p class="plan-duration">One 60-min session</p>
+                <div class="plan-features">
+                    <div class="plan-feature"><i class="fas fa-check"></i> Initial band-score assessment</div>
+                    <div class="plan-feature"><i class="fas fa-check"></i> Identify your weakest skill</div>
+                    <div class="plan-feature"><i class="fas fa-check"></i> Personalized study roadmap</div>
+                </div>
+                <a href="#contact" class="btn-plan">Book Free Class</a>
+            </div>
+
+            <div class="pricing-card featured">
+                <p class="plan-name">1-on-1 Intensive</p>
+                <p class="plan-price">₹3,500</p>
+                <p class="plan-duration">Per month · 12 sessions</p>
+                <div class="plan-features">
+                    <div class="plan-feature"><i class="fas fa-check"></i> 3 sessions per week (1hr each)</div>
+                    <div class="plan-feature"><i class="fas fa-check"></i> All 4 modules covered</div>
+                    <div class="plan-feature"><i class="fas fa-check"></i> Writing essay corrections</div>
+                    <div class="plan-feature"><i class="fas fa-check"></i> 2 full mock tests</div>
+                    <div class="plan-feature"><i class="fas fa-check"></i> WhatsApp doubt support</div>
+                </div>
+                <a href="#contact" class="btn-plan">Get Started</a>
+            </div>
+
+            <div class="pricing-card">
+                <p class="plan-name">Group Batch</p>
+                <p class="plan-price">₹1,800</p>
+                <p class="plan-duration">Per month · Max 5 students</p>
+                <div class="plan-features">
+                    <div class="plan-feature"><i class="fas fa-check"></i> 2 sessions per week</div>
+                    <div class="plan-feature"><i class="fas fa-check"></i> Shared writing feedback</div>
+                    <div class="plan-feature"><i class="fas fa-check"></i> Speaking partner practice</div>
+                    <div class="plan-feature"><i class="fas fa-check"></i> 1 full mock test</div>
+                </div>
+                <a href="#contact" class="btn-plan">Join Batch</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <span class="section-label">§ 05. get in touch</span>
+        <h2 class="section-title">Start Your Journey</h2>
+        <div class="contact-box">
+            <div class="contact-left">
+                <h3>Ready to achieve your target band?</h3>
+                <p>Fill the form and I'll reach out within 24 hours to schedule your free demo class. No commitment needed.</p>
+
+                <div class="contact-detail">
+                    <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+                    <p>pratik.paudel360@gmail.com</p>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon"><i class="fas fa-phone"></i></div>
+                    <p>+977 98XXXXXXXX</p>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon"><i class="fab fa-whatsapp"></i></div>
+                    <p>Available on WhatsApp</p>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon"><i class="fas fa-video"></i></div>
+                    <p>Online via Zoom / Google Meet</p>
+                </div>
+            </div>
+
+            <form class="contact-form" id="ieltsForm">
+                <input type="text" placeholder="Your Full Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Phone / WhatsApp Number">
+                <select>
+                    <option value="" disabled selected>Current Band Score (approx.)</option>
+                    <option>Below 5.0</option>
+                    <option>5.0 – 5.5</option>
+                    <option>6.0 – 6.5</option>
+                    <option>7.0+ (Need refinement)</option>
+                    <option>Never taken IELTS</option>
+                </select>
+                <select>
+                    <option value="" disabled selected>I'm interested in...</option>
+                    <option>1-on-1 Intensive Coaching</option>
+                    <option>Group Batch</option>
+                    <option>Just the Free Trial</option>
+                    <option>Writing Module Only</option>
+                    <option>Speaking Module Only</option>
+                </select>
+                <textarea rows="4" placeholder="Any specific goals or questions?"></textarea>
+                <button type="submit">Send Inquiry <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Pratik Poudel · IELTS Instruction & Language Coaching</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="tech.html">Developer Portfolio</a>
+            <a href="mailto:pratik.paudel360@gmail.com">Email</a>
+        </div>
+    </footer>
+
+    <script>
+        // Nav toggle
+        const hamburger = document.getElementById('navHamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+
+        // Footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Form submission feedback
+        document.getElementById('ieltsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            btn.textContent = '✓ Inquiry Sent!';
+            btn.style.background = '#10b981';
+            setTimeout(() => { btn.innerHTML = 'Send Inquiry <i class="fas fa-paper-plane"></i>'; btn.style.background = ''; }, 3000);
+        });
+    </script>
+</body>
+</html>

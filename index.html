@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratik Poudel | Developer & Educator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tech-bg: #080e1a;
+            --tech-accent: #00d4ff;
+            --ielts-bg: #fdfbf7;
+            --ielts-accent: #7c3aed;
+            --ielts-orange: #d35400;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .split {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: flex 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+            position: relative;
+            cursor: pointer;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        /* ---- Tech Side ---- */
+        .left {
+            background-color: var(--tech-bg);
+            color: white;
+        }
+
+        .left-bg-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+            transition: opacity 0.4s;
+        }
+
+        .left:hover .left-bg-grid { opacity: 2; }
+
+        .left-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            transition: transform 0.6s ease, opacity 0.4s;
+            opacity: 0;
+        }
+        .left:hover .left-glow { transform: translate(-50%, -50%) scale(1.4); opacity: 1; }
+
+        .left-content { position: relative; z-index: 2; text-align: center; padding: 40px; }
+
+        .left .tag {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: var(--tech-accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            opacity: 0.8;
+        }
+
+        .left h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .left .desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.45);
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+
+        .btn-tech {
+            display: inline-block;
+            padding: 13px 32px;
+            border: 1.5px solid var(--tech-accent);
+            color: var(--tech-accent);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-tech::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--tech-accent);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .left:hover .btn-tech::before { transform: translateX(0); }
+        .left:hover .btn-tech { color: var(--tech-bg); }
+
+        .left .stack-icons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 28px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease 0.1s;
+        }
+        .left:hover .stack-icons { opacity: 1; transform: translateY(0); }
+
+        .stack-icons span {
+            font-size: 0.72rem;
+            padding: 5px 10px;
+            border: 1px solid rgba(0,212,255,0.3);
+            color: rgba(255,255,255,0.6);
+            font-family: 'Courier New', monospace;
+            border-radius: 3px;
+        }
+
+        /* ---- IELTS Side ---- */
+        .right {
+            background-color: var(--ielts-bg);
+            color: #2c3e50;
+            border-left: 1px solid rgba(124,58,237,0.2);
+        }
+
+        .right-texture {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(#d8d4ce 1px, transparent 1px);
+            background-size: 22px 22px;
+            opacity: 0.5;
+            transition: opacity 0.4s;
+        }
+        .right:hover .right-texture { opacity: 0.8; }
+
+        .right-content { position: relative; z-index: 2; text-align: center; padding: 40px; }
+
+        .right .tag {
+            font-size: 0.78rem;
+            color: var(--ielts-orange);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .right h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: #1a1a2e;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .right .desc {
+            font-size: 0.95rem;
+            color: rgba(44,62,80,0.55);
+            margin-bottom: 32px;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .btn-ielts {
+            display: inline-block;
+            padding: 13px 32px;
+            background: var(--ielts-accent);
+            color: white;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .right:hover .btn-ielts {
+            background: #5b21b6;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(124,58,237,0.3);
+        }
+
+        .right .band-badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 28px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease 0.1s;
+        }
+        .right:hover .band-badges { opacity: 1; transform: translateY(0); }
+
+        .band-badges span {
+            font-size: 0.72rem;
+            padding: 5px 10px;
+            border: 1px solid rgba(124,58,237,0.3);
+            color: var(--ielts-accent);
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* ---- Divider Label ---- */
+        .divider {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .divider-dot {
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        /* ---- Hover expand ---- */
+        .left:hover { flex: 1.6; }
+        .right:hover { flex: 1.6; }
+
+        /* ---- Mobile ---- */
+        @media (max-width: 768px) {
+            body { overflow: auto; }
+            .container { flex-direction: column; }
+            .split { height: 50vh; flex: none !important; }
+            .stack-icons, .band-badges { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="tech.html" class="split left">
+            <div class="left-bg-grid"></div>
+            <div class="left-glow"></div>
+            <div class="left-content">
+                <p class="tag">// Software Developer</p>
+                <h1>The<br>Developer</h1>
+                <p class="desc">BCA Student · Web & Python</p>
+                <div class="btn-tech">View Tech Portfolio →</div>
+                <div class="stack-icons">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JS</span>
+                    <span>Python</span>
+                </div>
+            </div>
+        </a>
+
+        <div class="divider"><div class="divider-dot"></div></div>
+
+        <a href="ielts.html" class="split right">
+            <div class="right-texture"></div>
+            <div class="right-content">
+                <p class="tag">§ IELTS Instructor</p>
+                <h1>The<br>Instructor</h1>
+                <p class="desc">Certified · 7 Band Achiever</p>
+                <div class="btn-ielts">View IELTS Portfolio →</div>
+                <div class="band-badges">
+                    <span>Writing</span>
+                    <span>Speaking</span>
+                    <span>Reading</span>
+                    <span>Listening</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</body>
+</html>
