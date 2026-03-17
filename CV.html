@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV – Pratik Poudel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:       #2a7c6f;
+      --teal-light: #3aa393;
+      --teal-pale:  #e8f5f3;
+      --ink:        #1a1a1a;
+      --muted:      #5a5a5a;
+      --rule:       #d0e8e4;
+      --white:      #ffffff;
+      --sidebar-bg: #f0faf8;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #eef4f3;
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 16px;
+    }
+
+    .page {
+      background: var(--white);
+      width: 860px;
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.13);
+      border-radius: 4px;
+      overflow: hidden;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      background: var(--sidebar-bg);
+      padding: 48px 28px 48px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      border-right: 1px solid var(--rule);
+    }
+
+    .photo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .photo-ring {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      box-shadow: 0 8px 24px rgba(42,124,111,0.25);
+    }
+
+    .photo-ring img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: #cde8e4;
+    }
+
+    .name-block {
+      text-align: center;
+    }
+
+    .name-block h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--teal);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .name-block .role {
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* sidebar section */
+    .s-section { display: flex; flex-direction: column; gap: 10px; }
+
+    .s-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--teal);
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--teal-light);
+    }
+
+    .s-row {
+      display: flex;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .s-row .s-key {
+      font-weight: 600;
+      color: var(--ink);
+      min-width: 68px;
+      flex-shrink: 0;
+    }
+
+    .s-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .s-list li {
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.4;
+    }
+
+    .s-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--teal-light);
+      font-size: 0.65rem;
+      top: 2px;
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      background: var(--teal-pale);
+      color: var(--teal);
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 48px 44px 48px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .top-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-bottom: 3px solid var(--teal);
+      padding-bottom: 18px;
+    }
+
+    .top-bar h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .top-bar h2 span { color: var(--teal); }
+
+    .top-bar .subtitle {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* main section */
+    .m-section { display: flex; flex-direction: column; gap: 14px; }
+
+    .m-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .m-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* objective */
+    .objective-text {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: var(--muted);
+      border-left: 3px solid var(--teal-light);
+      padding-left: 16px;
+    }
+
+    /* entry */
+    .entry {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2px 16px;
+    }
+
+    .entry-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .entry-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .entry-date {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--teal);
+      background: var(--teal-pale);
+      border-radius: 3px;
+      padding: 2px 8px;
+      white-space: nowrap;
+      align-self: start;
+      letter-spacing: 0.04em;
+    }
+
+    .entry-desc {
+      grid-column: 1 / -1;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 4px;
+    }
+
+    /* achievement */
+    .ach-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ach-list li {
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .ach-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-size: 0.6rem;
+      top: 3px;
+    }
+
+    /* gpa badge */
+    .gpa {
+      display: inline-block;
+      background: var(--teal);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      border-radius: 2px;
+      padding: 1px 6px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .divider { border: none; border-top: 1px solid var(--rule); }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; border-radius: 0; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+
+    <div class="photo-wrap">
+      <div class="photo-ring">
+        <!-- Placeholder silhouette since the original photo cannot be embedded -->
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;border-radius:50%;">
+          <rect width="120" height="120" fill="#c8e6e2" rx="60"/>
+          <circle cx="60" cy="46" r="22" fill="#2a7c6f" opacity="0.6"/>
+          <ellipse cx="60" cy="105" rx="36" ry="28" fill="#2a7c6f" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="name-block">
+        <h1>Pratik Poudel</h1>
+        <div class="role">BCA Student &amp; IELTS Instructor</div>
+      </div>
+    </div>
+
+    <!-- PROFILE -->
+    <div class="s-section">
+      <div class="s-label">Profile</div>
+      <div class="s-row"><span class="s-key">Nationality</span> Nepali</div>
+      <div class="s-row"><span class="s-key">DOB</span> 26 March, 2005</div>
+      <div class="s-row"><span class="s-key">Language</span> Nepali, English</div>
+      <div class="s-row"><span class="s-key">Status</span> Single</div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="s-section">
+      <div class="s-label">Contact</div>
+      <div class="s-row"><span class="s-key">Phone</span> 9748704440</div>
+      <div class="s-row"><span class="s-key">Email</span> <a href="mailto:pratik.paudel360@gmail.com" style="color:var(--teal);word-break:break-all;">pratik.paudel360@gmail.com</a></div>
+      <div class="s-row"><span class="s-key">Address</span> Butwal-11, Buddhanagar</div>
+    </div>
+
+    <!-- EXPERTISE -->
+    <div class="s-section">
+      <div class="s-label">Expertise</div>
+      <div class="tag-cloud">
+        <span class="tag">Language Skills</span>
+        <span class="tag">Documentation</span>
+        <span class="tag">Classroom Mgmt</span>
+        <span class="tag">Communication</span>
+        <span class="tag">IT Skills</span>
+      </div>
+    </div>
+
+    <!-- HOBBIES -->
+    <div class="s-section">
+      <div class="s-label">Hobbies</div>
+      <ul class="s-list">
+        <li>Tutoring</li>
+        <li>Programming</li>
+        <li>Reading Books</li>
+        <li>Writing</li>
+        <li>Travelling</li>
+      </ul>
+    </div>
+
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main">
+
+    <div class="top-bar">
+      <h2>Pratik <span>Poudel</span></h2>
+      <div class="subtitle">Curriculum Vitae</div>
+    </div>
+
+    <!-- OBJECTIVE -->
+    <div class="m-section">
+      <div class="m-label">Objective</div>
+      <p class="objective-text">
+        I am very dedicated and honest towards my professional life. I am flexible, having
+        excellent time management skills, proven interpersonal skills, and good communication
+        skills, working in a team whilst also capable of using my own initiative. My goal is
+        to always be passionate and enthusiastic to learn and undertake new challenges
+        throughout my life.
+      </p>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="m-section">
+      <div class="m-label">Experience</div>
+
+      <div class="entry">
+        <div>
+          <div class="entry-title">IELTS Instructor</div>
+          <div class="entry-sub">Avenue Butwal Education Consultancy</div>
+        </div>
+        <div class="entry-date">Feb 2024 – Mar 2025</div>
+        <p class="entry-desc">Delivered IELTS preparation classes, designed lesson materials, and guided students toward target band scores.</p>
+      </div>
+
+      <hr class="divider"/>
+
+      <div class="entry">
+        <div>
+          <div class="entry-title">Document Officer</div>
+          <div class="entry-sub">Avenue Butwal Education Consultancy</div>
+        </div>
+        <div class="entry-date">Mar 2025 – Present</div>
+        <p class="entry-desc">Managing documentation processes and student file administration at the consultancy.</p>
+      </div>
+    </div>
+
+    <!-- ACADEMICS -->
+    <div class="m-section">
+      <div class="m-label">Academics</div>
+
+      <div class="entry">
+        <div>
+          <div class="entry-title">Bachelor of Computer Application (BCA) <span class="gpa">3.63 GPA</span></div>
+          <div class="entry-sub">Butwal Kalika Campus – Affiliated to Tribhuvan University</div>
+        </div>
+        <div class="entry-date">2024 – Present</div>
+      </div>
+
+      <hr class="divider"/>
+
+      <div class="entry">
+        <div>
+          <div class="entry-title">Secondary Level Education – Science Stream <span class="gpa">3.0 GPA</span></div>
+          <div class="entry-sub">Kalika Manavgyan Secondary School</div>
+        </div>
+        <div class="entry-date">2021 – 2023</div>
+      </div>
+
+      <hr class="divider"/>
+
+      <div class="entry">
+        <div>
+          <div class="entry-title">SEE (School Leaving Certificate) <span class="gpa">3.90 GPA</span></div>
+          <div class="entry-sub">Gyanpunja Boarding School</div>
+        </div>
+        <div class="entry-date">2009 – 2021</div>
+      </div>
+    </div>
+
+    <!-- ACHIEVEMENTS -->
+    <div class="m-section">
+      <div class="m-label">Achievements</div>
+      <ul class="ach-list">
+        <li>Topper of BCA First Semester 2024 Batch at Butwal Kalika Campus with a 3.63 GPA.</li>
+        <li>Received an honorary award at British Council Pre-Partners Summit Butwal for highest IELTS registration in 2024 on behalf of Avenue Butwal Education Consultancy.</li>
+        <li>Certified with IELTS Teacher Training Certificate in November 2025.</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
